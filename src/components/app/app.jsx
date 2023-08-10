@@ -1,17 +1,21 @@
 import styles from "./app.module.css";
 import { data } from "../../utils/data";
 
-function App() {
-  return (
-    <div className={styles.app}>
-      <pre style={{
-      	margin: "auto",
-      	fontSize: "1.5rem"
-      }}>
-      	Измените src/components/app/app.jsx и сохраните для обновления.
-      </pre>
-    </div>
-  );
+
+import React from "react";
+
+import Header from "../header/header";
+import Main from "../main/main";
+
+class App extends React.Component {
+    render() {
+        return (
+            <div>
+                <Header />
+                <Main />
+            </div>
+        )
+    }
 }
 
-export default App;
+export default App; 
