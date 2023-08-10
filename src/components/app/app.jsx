@@ -4,15 +4,17 @@ import { data } from "../../utils/data";
 
 import React from "react";
 
-import Header from "../header/header";
+import AppHeader from "../appheader/appheader";
 import Main from "../main/main";
+
 
 class App extends React.Component {
     render() {
         return (
             <div>
-                <Header />
+                <AppHeader />
                 <Main />
+                
             </div>
         )
     }
