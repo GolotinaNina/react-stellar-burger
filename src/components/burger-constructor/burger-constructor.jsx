@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import styles from './burger-constructor.module.css';
 import PropTypes from 'prop-types';
@@ -25,6 +26,7 @@ function BurgerConstructor({ burgerArr }) {
     },
     { Bun: null, ElmArr: [], totalPrice: 0 }
   );
+
 
   const handleModalOpen = () => {
     setModalOpen(true);

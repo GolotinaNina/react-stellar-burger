@@ -5,7 +5,6 @@ import BurgerIngredients from '../burger-ingredients/burger-Ingredients';
 import BurgerConstructor from '../burger-constructor/burger-constructor';
 import React, { useEffect, useState } from "react";
 
-
 function App() {
   const [data, setData] = useState([]);
 
