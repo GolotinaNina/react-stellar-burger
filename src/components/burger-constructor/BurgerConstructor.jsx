@@ -7,7 +7,6 @@ import ingredientPropType from '../../utils/prop-types';
 import Modal from '../modal/Modal';
 import OrderDetails from '../order-details/OrderDetails';
 
-
 function BurgerConstructor({ burgerArr }) {
 
   const [modalOpen, setModalOpen] = useState(false);
@@ -35,7 +34,7 @@ function BurgerConstructor({ burgerArr }) {
     <section className={`${styles.section} mt-25`}>
       <div className={`${styles.list} custom-scroll pt-4 pl-4`}>
         <div className={`${styles['burger-bun']} pl-8`}>
-        {Bun && Bun.name && (
+          {Bun && Bun.name && (
             <ConstructorElement
               type="top"
               isLocked={true}
@@ -45,9 +44,9 @@ function BurgerConstructor({ burgerArr }) {
             />
           )}
         </div>
-        {BurgerElement(ElmArr)}
+        <BurgerElement elements={ElmArr} />
         <div className={`${styles['burger-bun']} pl-8`}>
-        {Bun && Bun.name && (
+          {Bun && Bun.name && (
             <ConstructorElement
               type="top"
               isLocked={true}
