@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import { CurrencyIcon, Counter } from '@ya.praktikum/react-developer-burger-ui-components';
 import styles from './ingredient-card.module.css';
 import ingredientPropType from '../../../utils/prop-types';
-import Modal from '../../modal/Modal';
-import IngredientDetails from '../../ingredient-details/IngredientDetails';
+import Modal from '../../modal/modal';
+import IngredientDetails from '../../ingredient-details/ingredient-details';
 
 
 function IngredientCard({el}) {
