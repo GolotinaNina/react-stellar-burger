@@ -9,6 +9,8 @@ function BurgerIngredients() {
 
     const [currentTab, setCurrentTab] = useState("bun");
 
+    const filterDataByType = (type) => data.filter((el) => el.type === type);
+
     const onTabClick = (tab) => {
         setCurrentTab(tab);
         const ref = document.getElementById(tab);
@@ -45,11 +47,7 @@ function BurgerIngredients() {
                             typeReady = item.type
                             return (
                                 <IngredientCards
-                                cardsArr={data.filter((el)=> {
-                                    if(el.type === item.type){
-                                        return el.type
-                                    }
-                                })} />
+                                cardsArr={filterDataByType(item.type)} />
                             );
                         }
                         return null;
