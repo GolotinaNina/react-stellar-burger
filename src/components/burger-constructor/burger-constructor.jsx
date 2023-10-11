@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './burger-constructor.module.css';
 import PropTypes from 'prop-types';
-import BurgerElement from './burger-element/burger-element';
+import BurgerElements from './burger-element/burger-element';
 import { ConstructorElement, CurrencyIcon, Button } from '@ya.praktikum/react-developer-burger-ui-components';
 import ingredientPropType from '../../utils/prop-types';
 
@@ -33,7 +33,7 @@ function BurgerConstructor({ burgerArr }) {
             thumbnail={Bun.image}
           />
         </div>
-        {BurgerElement(ElmArr)}
+        {BurgerElements(ElmArr)}
         <div className={`${styles['burger-bun']} pl-8`}>
           <ConstructorElement
             type="bottom"
