@@ -4,11 +4,11 @@ import styles from './burger-ingredients.module.css';
 import IngredientCards from './ingredient-cards/ingredient-cards';
 
 
-function BurgerIngredients({data}) {
+function BurgerIngredients({ingredients}) {
 
     const [currentTab, setCurrentTab] = useState("bun");
 
-    const filter = (type) => data.filter((el) => el.type === type);
+    const filter = (type) => ingredients.filter((el) => el.type === type);
 
     const onTabClick = (tab) => {
         setCurrentTab(tab);
@@ -41,7 +41,7 @@ function BurgerIngredients({data}) {
                     {tab === "bun" ? "Булки" : tab === "sauce" ? "Соусы" : "Начинка"}
                     </h2>
                     <ul className={`${styles["card-list"]} pl-4 pr-4`}>
-                    {data.map((item) => {
+                    {ingredients.map((item) => {
                         if (item.type === tab && typeReady != item.type) {
                             typeReady = item.type
                             return (
