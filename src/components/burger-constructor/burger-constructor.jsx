@@ -33,7 +33,7 @@ function BurgerConstructor({ burgerArr }) {
             thumbnail={Bun.image}
           />
         </div>
-        {BurgerElements(ElmArr)}
+        <BurgerElements  elements={ElmArr} />
         <div className={`${styles['burger-bun']} pl-8`}>
           <ConstructorElement
             type="bottom"

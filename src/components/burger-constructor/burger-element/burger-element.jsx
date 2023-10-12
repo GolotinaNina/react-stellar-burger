@@ -3,7 +3,7 @@ import { ConstructorElement, DragIcon} from '@ya.praktikum/react-developer-burge
 import styles from './burger-element.module.css';
 
 
-export default function BurgerElement(elements) {
+export default function BurgerElements({elements}) {
     return elements.map(({ _id, name, price, image }) => (
         <div key={_id} className={styles.elements}>
             <DragIcon type="primary" />
