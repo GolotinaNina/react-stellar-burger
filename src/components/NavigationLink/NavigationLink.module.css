@@ -1,0 +1,16 @@
+.linkNav {
+    text-decoration: none;
+    display: flex;
+    flex-direction: row;
+    color: inherit;
+    
+}
+
+.text {
+    white-space: nowrap;
+    padding-left: 8px;
+}
+
+.active {
+    color:inherit;
+}
