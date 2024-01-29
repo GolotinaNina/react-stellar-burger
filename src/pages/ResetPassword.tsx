@@ -17,13 +17,13 @@ export function ResetPassword() {
         navigate('/login', {replace:false})
     }
 
-    const resetPasswordFormHeadder = "Восстановление пароля";
+    const resetPasswordFormHeader = "Восстановление пароля";
     const resetPasswordInputs = [Inputs.newPassword, Inputs.token];
     const resetPasswordButton = navigateButton({onClick: onClick, label:"Сохранить"});
     const resetPasswordLinks = [Links.rememberPassword];
 
     return (
-        <FormContainerOther header={resetPasswordFormHeadder} inputs={resetPasswordInputs} button={resetPasswordButton}
+        <FormContainerOther header={resetPasswordFormHeader} inputs={resetPasswordInputs} button={resetPasswordButton}
                         links={resetPasswordLinks}/>
     )
 }

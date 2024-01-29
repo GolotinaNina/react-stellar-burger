@@ -33,7 +33,10 @@ export const register =  (name: string, pass: string, email: string): AppThunk =
     return Promise.reject(e)
   }
 };
-
+export type TForgotPasswordResponse = {
+  message:string
+  success:true
+}
 export const forgotPassword = async (email: string) => {
   const res = await fetch(POST_PASSWORD_RESET_ENDPOINT, {
     method: "POST",
@@ -44,13 +47,12 @@ export const forgotPassword = async (email: string) => {
       email: email,
     }),
   });
-  return await checkResponse(res);
+  return await checkResponse<TForgotPasswordResponse>(res);
 };
 
 export function postApiResetPassword(email:string) {
   forgotPassword(email)
     .then((res) => {
-      console.log(res);
       localStorage.setItem("resetPasswordFlag", String(true));
     })
     .catch((err) => {
@@ -69,11 +71,11 @@ export const resetPassword = async (newPassword: string, token: string) => {
       token: token,
     }),
   });
-  return await checkResponse(res);
+  return await checkResponse<TForgotPasswordResponse>(res);
 };
 
-export function postApiReset(newPassword:string, token:string) {
-  resetPassword(newPassword, token)
+export async function postApiReset(newPassword:string, token:string) {
+ await resetPassword(newPassword, token)
     .then((res) => {
       localStorage.removeItem("resetPasswordFlag");
     })
@@ -82,10 +84,10 @@ export function postApiReset(newPassword:string, token:string) {
     });
 }
 
-export const updateUser = (email:string, name:string, password:string):AppThunk<Promise<unknown>> => {
-  return (dispatch) => {
+export const updateUser = (email:string, name:string, password:string):AppThunk<Promise<void>> => {
+  return async (dispatch) => {
     const accessToken: string | null = localStorage.getItem("accessToken");
-    return fetchWithRefresh<TResUser>(PROFILE_ENDPOINT, {
+    const res = await fetchWithRefresh<TResUser>(PROFILE_ENDPOINT, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
@@ -96,9 +98,8 @@ export const updateUser = (email:string, name:string, password:string):AppThunk<
         name,
         password,
       }),
-    }).then((res) => {
-      dispatch(setUser(res.user));
     });
+    dispatch(setUser(res.user));
   };
 };
 

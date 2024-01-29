@@ -71,7 +71,7 @@ export default function OrderInfo() {
   return res.length;
   };
 
-  const uniqueElements = (arr: TIngredient[] | undefined) => {
+  const uniqueElements = (arr: TIngredient[]) => {
     if (arr) {
       return arr.filter((element, index) => index === arr.indexOf(element));
     }

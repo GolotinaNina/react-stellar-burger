@@ -41,7 +41,6 @@ export function clearCurrentOrder(): ClearCurrentOrderAction {
 }
 
 export const getCurrentOrder = (number:number):AppThunk => {
-  console.log(number);
   return (dispatch) => {
     const accessToken: string | null = localStorage.getItem("accessToken");
     return fetch(`${BASE_URL}/orders/${number}`, {
