@@ -5,7 +5,7 @@ describe("fibonacci page display correctly", function () {
     cy.visit('/fibonacci');
   });
   it("Header should be correct", function (){
-    cy.get('h3').contains('Последовательность Фибоначчи')
+    cy.get('h3').should('include.text','Последовательность Фибоначчи')
   })
   it("should button disabled if input is empty", function () {
     cy.get("input").should("be.empty");

@@ -7,7 +7,7 @@ describe("string page display correctly", function () {
   });
 
   it("Header should be correct", function (){
-    cy.get('h3').contains('Строка')
+    cy.get('h3').should('include.text','Строка')
   })
 
   it("should button disabled if input is empty", function () {

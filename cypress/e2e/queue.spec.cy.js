@@ -15,7 +15,7 @@ describe("queue page display correctly", function () {
   });
 
   it("Header should be correct", function (){
-    cy.get('h3').contains('Очередь')
+    cy.get('h3').should('include.text','Очередь')
   })
 
   it("should button disabled if input is empty", function () {

@@ -24,7 +24,7 @@ describe("list page display correctly", function () {
     cy.visit('/list');
   });
   it("Header should be correct", function (){
-    cy.get('h3').contains('Связный список')
+    cy.get('h3').should('include.text','Связный список')
   })
   const defaultColor = "rgb(0, 50, 255)";
   const modifiedColor = "rgb(210, 82, 225)";

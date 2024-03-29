@@ -21,10 +21,10 @@ describe("app works correctly with routes", function () {
   });
 
   it("should open queue-page by link", function () {
-    cy.visit(`${testUrl}/queue`);
+    cy.visit('/queue');
   });
 
   it("should open list-page by link", function () {
-    cy.visit(`${testUrl}/list`);
+    cy.visit('/list');
   });
 });
