@@ -96,7 +96,7 @@ describe("list page display correctly", function () {
 
     cy.get(testArrowSelector).should("have.length", 4);
 
-    cy.get(testCirleSelector).each(() => {
+    cy.get(testCirleSelector).each((item, index, $list) => {
       cy.get($list.eq(0)).should("have.css", "border-color", changingColor);
       cy.get($list.eq(1)).should("have.css", "border-color", defaultColor);
       cy.get($list.eq(2)).should("have.css", "border-color", defaultColor);
