@@ -12,8 +12,12 @@ import {
 
 describe("queue page display correctly", function () {
   before(function () {
-    cy.visit(`${testUrl}/queue`);
+    cy.visit('/queue');
   });
+
+  it("Header should be correct", function (){
+    cy.get('h3').contains('Очередь')
+  })
 
   it("should button disabled if input is empty", function () {
     cy.get("input").should("be.empty");

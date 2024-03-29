@@ -12,8 +12,12 @@ import {
 
 describe("stack page display correctly", function () {
   before(function () {
-    cy.visit(`${testUrl}/stack`);
+    cy.visit('/stack');
   });
+
+  it("Header should be correct", function (){
+    cy.get('h3').contains('Стек')
+  })
 
   it("should button disabled if input is empty", function () {
     cy.get("input").should("be.empty");

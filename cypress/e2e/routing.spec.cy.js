@@ -1,24 +1,23 @@
-import { testUrl } from "../../src/constants/constants";
 
 describe("app works correctly with routes", function () {
   before(function () {
-    cy.visit(testUrl);
+    cy.visit('/');
   });
 
   it("should open string-page by link", function () {
-    cy.visit(`${testUrl}/recursion`);
+    cy.visit('/recursion');
   });
 
   it("should open fibonacci-page by link", function () {
-    cy.visit(`${testUrl}/fibonacci`);
+    cy.visit('/fibonacci');
   });
 
   it("should open sorting-page by link", function () {
-    cy.visit(`${testUrl}/sorting`);
+    cy.visit('/sorting');
   });
 
   it("should open stack-page by link", function () {
-    cy.visit(`${testUrl}/stack`);
+    cy.visit('/stack');
   });
 
   it("should open queue-page by link", function () {

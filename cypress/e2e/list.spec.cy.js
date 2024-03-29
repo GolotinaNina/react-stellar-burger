@@ -1,6 +1,5 @@
 import { SHORT_DELAY_IN_MS } from "../../src/constants/delays";
 import {
-  testUrl,
   testHeadSelector,
   testTailSelector,
   testCirleSelector,
@@ -22,9 +21,11 @@ import {
 
 describe("list page display correctly", function () {
   before(function () {
-    cy.visit(`${testUrl}/list`);
+    cy.visit('/list');
   });
-
+  it("Header should be correct", function (){
+    cy.get('h3').contains('Связный список')
+  })
   const defaultColor = "rgb(0, 50, 255)";
   const modifiedColor = "rgb(210, 82, 225)";
   const changingColor = "rgb(127, 224, 81)";

@@ -1,11 +1,13 @@
 import { SHORT_DELAY_IN_MS } from "../../src/constants/delays";
-import { testUrl, testCirleSelector } from "../../src/constants/constants";
+import { testCirleSelector } from "../../src/constants/constants";
 
 describe("fibonacci page display correctly", function () {
   before(function () {
-    cy.visit(`${testUrl}/fibonacci`);
+    cy.visit('/fibonacci');
   });
-
+  it("Header should be correct", function (){
+    cy.get('h3').contains('Последовательность Фибоначчи')
+  })
   it("should button disabled if input is empty", function () {
     cy.get("input").should("be.empty");
     cy.get("button").should("be.disabled");
@@ -20,46 +22,12 @@ describe("fibonacci page display correctly", function () {
     cy.get("button").should("not.be.disabled");
     cy.get("button[type='submit']").click();
 
-    cy.get(testCirleSelector).each(($el, index) => {
-      cy.get($el).contains(fibonacciArr[index]);
-      cy.get($el).should("have.css", "border-color", color);
+    fibonacciArr.forEach((_, index) => {
+      cy.get(testCirleSelector).should('have.length', index + 1);
+      cy.get(testCirleSelector).each(($el, numberIndex) => {
+        cy.wrap($el).children().contains(fibonacciArr[numberIndex]);
+        cy.get($el).should('have.css', 'border-color', color);
+      });
     });
-
-    cy.wait(SHORT_DELAY_IN_MS);
-
-    cy.get(testCirleSelector).each(($el, index) => {
-      cy.get($el).contains(fibonacciArr[index]);
-      cy.get($el).should("have.css", "border-color", color);
-    });
-
-    cy.wait(SHORT_DELAY_IN_MS);
-
-    cy.get(testCirleSelector).each(($el, index) => {
-      cy.get($el).contains(fibonacciArr[index]);
-      cy.get($el).should("have.css", "border-color", color);
-    });
-
-    cy.wait(SHORT_DELAY_IN_MS);
-
-    cy.get(testCirleSelector).each(($el, index) => {
-      cy.get($el).contains(fibonacciArr[index]);
-      cy.get($el).should("have.css", "border-color", color);
-    });
-
-    cy.wait(SHORT_DELAY_IN_MS);
-
-    cy.get(testCirleSelector).each(($el, index) => {
-      cy.get($el).contains(fibonacciArr[index]);
-      cy.get($el).should("have.css", "border-color", color);
-    });
-
-    cy.wait(SHORT_DELAY_IN_MS);
-
-    cy.get(testCirleSelector).each(($el, index) => {
-      cy.get($el).contains(fibonacciArr[index]);
-      cy.get($el).should("have.css", "border-color", color);
-    });
-
-    cy.wait(SHORT_DELAY_IN_MS);
   });
 });

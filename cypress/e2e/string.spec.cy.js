@@ -1,17 +1,21 @@
 import { DELAY_IN_MS } from "../../src/constants/delays";
-import { testUrl, testCirleSelector } from "../../src/constants/constants";
+import { testCirleSelector } from "../../src/constants/constants";
 
 describe("string page display correctly", function () {
   before(function () {
-    cy.visit(`${testUrl}/recursion`);
+    cy.visit(`/recursion`);
   });
+
+  it("Header should be correct", function (){
+    cy.get('h3').contains('Строка')
+  })
 
   it("should button disabled if input is empty", function () {
     cy.get("input").should("be.empty");
     cy.get("button").should("be.disabled");
   });
 
-  it("srting should reverse correctly", function () {
+  it("string should reverse correctly", function () {
     const stringLength = 5;
 
     const originalString = "hello";
