@@ -1,4 +1,3 @@
-import { SHORT_DELAY_IN_MS } from "../../src/constants/delays";
 import { testCirleSelector } from "../../src/constants/constants";
 
 describe("fibonacci page display correctly", function () {

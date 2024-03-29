@@ -1,6 +1,5 @@
 import { SHORT_DELAY_IN_MS } from "../../src/constants/delays";
 import {
-  testUrl,
   testHeadSelector,
   testTailSelector,
   testCirleSelector,

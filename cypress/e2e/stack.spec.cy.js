@@ -1,6 +1,5 @@
 import { SHORT_DELAY_IN_MS } from "../../src/constants/delays";
 import {
-  testUrl,
   testCirleSelector,
   testCircleContainerSelector,
   testAddButtonSelector,
@@ -47,7 +46,7 @@ describe("stack page display correctly", function () {
       expect($head.eq(0)).to.contain("top");
     });
 
-    cy.get(testIndexSelector).each(($el, index, $list) => {
+    cy.get(testIndexSelector).each(($el, index) => {
       expect($el).to.contain(index);
     });
 
@@ -69,7 +68,7 @@ describe("stack page display correctly", function () {
       expect($head.eq(1)).to.contain("top");
     });
 
-    cy.get(testIndexSelector).each(($el, index, $list) => {
+    cy.get(testIndexSelector).each(($el, index, ) => {
       expect($el).to.contain(index);
     });
 
@@ -94,7 +93,7 @@ describe("stack page display correctly", function () {
       expect($head.eq(2)).to.contain("top");
     });
 
-    cy.get(testIndexSelector).each(($el, index, $list) => {
+    cy.get(testIndexSelector).each(($el, index) => {
       expect($el).to.contain(index);
     });
   });
@@ -127,7 +126,7 @@ describe("stack page display correctly", function () {
       expect($head.eq(1)).to.contain("top");
     });
 
-    cy.get(testIndexSelector).each(($el, index, $list) => {
+    cy.get(testIndexSelector).each(($el, index) => {
       expect($el).to.contain(index);
     });
 
@@ -155,7 +154,7 @@ describe("stack page display correctly", function () {
       expect($head.eq(0)).to.contain("top");
     });
 
-    cy.get(testIndexSelector).each(($el, index, $list) => {
+    cy.get(testIndexSelector).each(($el, index) => {
       expect($el).to.contain(index);
     });
 

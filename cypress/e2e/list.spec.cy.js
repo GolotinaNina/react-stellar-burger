@@ -70,7 +70,7 @@ describe("list page display correctly", function () {
       cy.get($tail.eq(3)).should("contain", "tail");
     });
 
-    cy.get(testIndexSelector).each(($el, index, $list) => {
+    cy.get(testIndexSelector).each(($el, index) => {
       cy.get($el).should("contain", index);
     });
 
@@ -96,7 +96,7 @@ describe("list page display correctly", function () {
 
     cy.get(testArrowSelector).should("have.length", 4);
 
-    cy.get(testCirleSelector).each(($el, index, $list) => {
+    cy.get(testCirleSelector).each(() => {
       cy.get($list.eq(0)).should("have.css", "border-color", changingColor);
       cy.get($list.eq(1)).should("have.css", "border-color", defaultColor);
       cy.get($list.eq(2)).should("have.css", "border-color", defaultColor);
@@ -126,7 +126,7 @@ describe("list page display correctly", function () {
       cy.get($tail.eq(4)).should("contain", "tail");
     });
 
-    cy.get(testIndexSelector).each(($el, index, $list) => {
+    cy.get(testIndexSelector).each(($el, index) => {
       cy.get($el).should("contain", index);
     });
   });
@@ -183,7 +183,7 @@ describe("list page display correctly", function () {
       cy.get($tail.eq(5)).should("contain", "tail");
     });
 
-    cy.get(testIndexSelector).each(($el, index, $list) => {
+    cy.get(testIndexSelector).each(($el, index) => {
       cy.get($el).should("contain", index);
     });
   });
@@ -224,7 +224,7 @@ describe("list page display correctly", function () {
       cy.get($tail.eq(4)).should("contain", "tail");
     });
 
-    cy.get(testIndexSelector).each(($el, index, $list) => {
+    cy.get(testIndexSelector).each(($el, index) => {
       cy.get($el).should("contain", index);
     });
   });
@@ -263,7 +263,7 @@ describe("list page display correctly", function () {
       cy.get($tail.eq(3)).should("contain", "tail");
     });
 
-    cy.get(testIndexSelector).each(($el, index, $list) => {
+    cy.get(testIndexSelector).each(($el, index) => {
       cy.get($el).should("contain", index);
     });
   });
@@ -330,7 +330,7 @@ describe("list page display correctly", function () {
       cy.get($tail.eq(4)).should("contain", "tail");
     });
 
-    cy.get(testIndexSelector).each(($el, index, $list) => {
+    cy.get(testIndexSelector).each(($el, index) => {
       cy.get($el).should("contain", index);
     });
   });
@@ -399,7 +399,7 @@ describe("list page display correctly", function () {
       cy.get($tail.eq(3)).should("contain", "tail");
     });
 
-    cy.get(testIndexSelector).each(($el, index, $list) => {
+    cy.get(testIndexSelector).each(($el, index) => {
       cy.get($el).should("contain", index);
     });
   });
